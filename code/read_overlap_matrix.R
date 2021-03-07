@@ -4,8 +4,8 @@ library(caret)
 library(data.table)
 library(ggplot2)
 range01 <- function(x){(x-min(x))/(max(x)-min(x))}
-setwd("/Users/sakshidhama/Dropbox/work/community_preference")
-mydir<-"/Users//sakshidhama//Dropbox//work//community_preference//all_overlap_matrix"
+setwd("/community_preference")
+mydir<-"/all_overlap_matrix"
 myfiles    <- list.files(path =mydir ,pattern = "*.xlsx",full.names = TRUE)
 A<-list()
 membership<-list()
