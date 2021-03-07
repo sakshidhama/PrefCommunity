@@ -13,8 +13,8 @@ library(gridExtra)
 source("new_setgraph_functions.r")
 real_graph_list<-real_data()
 #function to read many files together
-setwd("/Users/sakshidhama/Dropbox/work/community_preference")
-mydir<-"data_setgraph/synthetic_datasets"
+setwd("/community_preference")
+mydir<-"/synthetic_datasets"
 myfiles    <- list.files(path = mydir,pattern = "*.dat",full.names = TRUE)
 file_table <- myfiles %>% lapply(read.table)
 graph_data <- file_table %>% lapply(graph.data.frame)
