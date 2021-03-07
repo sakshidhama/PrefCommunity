@@ -3,8 +3,8 @@ library(dplyr)
 library(poliscidata)
 library(ggplot2)
 #Read the excel with community sizes
-setwd("/Users/sakshidhama/Dropbox/work/community_preference")
-mydir<-"/Users/sakshidhama/Dropbox/work/community_preference/refrences/paper_results/line_plot_alpha_results_code"
+setwd("/community_preference")
+mydir<-"/line_plot_alpha_results_code"
 linefiles    <- list.files(path =mydir ,pattern = "*.xlsx",full.names = TRUE)
 line_table <- linefiles %>% lapply(read_xlsx)
 # xlsx files
