@@ -1,6 +1,6 @@
 library(igraph)
-source("/Users/sakshidhama/Dropbox/work/community_preference/new_setgraph_functions.r")
-  setwd("/Users/sakshidhama/Dropbox/work/community_preference")
+source("/new_setgraph_functions.r")
+  setwd("/community_preference")
   ###############artificial data##########################
  # mydir<-"data_setgraph/synthetic_datasets"
   #myfiles    <- list.files(path =mydir ,pattern = "*.dat",full.names = TRUE)
