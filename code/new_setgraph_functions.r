@@ -18,8 +18,8 @@ library(igraph)
 library(igraphdata)
 real_data<-function()
 {
-  setwd("/Users/sakshidhama/Dropbox/work/community_preference")
-  mydir<-"data_setgraph/real_dataset"
+  setwd("Your path to working directory")
+  mydir<-"your path to network files"
   real_myfiles    <- list.files(path =mydir ,pattern = "*.txt",full.names = TRUE)
   real_file_table <- real_myfiles %>% lapply(read.table)
   real_graph_data <- real_file_table %>% lapply(graph.data.frame)
