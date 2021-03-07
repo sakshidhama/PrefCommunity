@@ -6,8 +6,8 @@ library(grid)
 library(gridExtra)
 
 #Read the excel with community sizes
-setwd("/Users/sakshidhama/Dropbox/work/community_preference")
-mydir<-"/Users/sakshidhama/Dropbox/work/community_preference/all"
+setwd("/community_preference")
+mydir<-"/community_preference/all"
 linefiles    <- list.files(path =mydir ,pattern = "*.xlsx",full.names = TRUE)
 line_table <- linefiles %>% lapply(read_xlsx)
 # xlsx files
