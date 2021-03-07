@@ -7,7 +7,7 @@ library(grid)
 library(gridExtra)
 library(data.table)
 violin_data<-list()
-setwd("/Users/sakshidhama/Dropbox/work/community_preference/data_setgraph")
+setwd("/community_preference/data_setgraph")
 mydir<-"violinfiles"
 community_files<-list.files(path=mydir,pattern = "*.xlsx",full.names = TRUE)
 file_table<-lapply(community_files, read_excel)
