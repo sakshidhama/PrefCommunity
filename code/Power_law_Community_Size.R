@@ -4,9 +4,9 @@ library(poweRlaw)
 library(ggplot2)
 library(magrittr)
 library(tidyverse)
-source("/Users/sakshidhama/Dropbox/work/community_preference/new_setgraph_functions.r")
-setwd("/Users/sakshidhama/Dropbox/work/community_preference/data_setgraph/many_power_law")
-mydir<-"/Users/sakshidhama/Dropbox/work/community_preference/data_setgraph/many_power_law"
+source("/community_preference/new_setgraph_functions.r")
+setwd("/many_power_law")
+mydir<-"/community_preference/many_power_law"
 community_files<-list.files(path=mydir,pattern = "*.csv",full.names = TRUE)
 file_table<-lapply(community_files, read_csv)
 set.seed(1)
