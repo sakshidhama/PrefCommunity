@@ -1,0 +1,65 @@
+#Updated 11th june
+library(igraph)
+library(poweRlaw)
+library(ggplot2)
+library(magrittr)
+library(tidyverse)
+source("/Users/sakshidhama/Dropbox/work/community_preference/new_setgraph_functions.r")
+setwd("/Users/sakshidhama/Dropbox/work/community_preference/data_setgraph/many_power_law")
+mydir<-"/Users/sakshidhama/Dropbox/work/community_preference/data_setgraph/many_power_law"
+community_files<-list.files(path=mydir,pattern = "*.csv",full.names = TRUE)
+file_table<-lapply(community_files, read_csv)
+set.seed(1)
+xlist<-list()
+xvalues<-list()
+yvalues<-list()
+zvalues<-list()
+zchar<-"a"
+for (i in 1:length(file_table)) {
+  
+  xlist[[i]]<-file_table[[i]][c(-1,-2)]
+  xvalues[[i]]<-seq(1:length(xlist[[i]]))
+  yvalues[[i]]<-as.numeric(unlist(xlist[[i]]))
+  zvalues[[i]]<-rep(paste0("seed ",i," "),length(xlist[[i]]))
+}
+m1 = displ$new(xvalues[[1]])
+m1$setXmin(estimate_xmin(m1))
+m2 = displ$new(xvalues[[2]])
+m2$setXmin(estimate_xmin(m2))
+m3 = displ$new(xvalues[[3]])
+m3$setXmin(estimate_xmin(m3))
+m4 = displ$new(xvalues[[4]])
+m4$setXmin(estimate_xmin(m4))
+m5 = displ$new(xvalues[[5]])
+m5$setXmin(estimate_xmin(m5))
+
+m6 = displ$new(xvalues[[6]])
+m6$setXmin(estimate_xmin(m6))
+pts1=plot(m1)
+pts2 = plot(m2)
+pts3 = plot(m3)
+pts4 = plot(m4)
+pts5 = plot(m5)
+pts6 = plot(m6)
+pts<-c(pts1,pts2,pts3,pts4,pts5,pts6)
+png(file = "community_size_powerlaw.png",width = 1600 ,height = 1000 ,res =120)
+mar.default <- c(5,4,4,2) + 0.1
+par(mar = mar.default + c(0, 4, 0, 0))
+plot(m6,xlab="Number of Communities",ylab="Size of Communities",cex.axis = 1.8,cex.lab=2)
+points(pts6$x,pts6$y, col="maroon",bg="maroon",pch = 24, cex=2)
+points(pts5$x, pts5$y, col="blue")
+points(pts4$x, pts4$y, col="orange")
+points(pts3$x, pts3$y, col="pink")
+points(pts2$x, pts2$y, col="yellow")
+points(pts1$x, pts1$y, col="red")
+
+lines(m1, col="red")
+lines(m2, col="yellow")
+lines(m3, col="pink")
+lines(m4, col="orange")
+lines(m5, col="blue")
+lines(m6, col="maroon")
+legend("bottomleft",text.font = 32, cex=1.5, xpd=T, ncol=1, lty=1, col=c("red","yellow",
+"pink", "orange","blue","maroon"),legend=c("Network 1","Network 2","Network 3","Network 4","Network 5","Network 6"), lwd=3, yjust=1.5,xjust=1.5, bty="n")
+dev.off()
+
